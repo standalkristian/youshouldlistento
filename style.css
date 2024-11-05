@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+:root {
+--backgroundcolor-main: #191412;
+--backgroundcolor-alt1: #120d0b;
+--backgroundcolor-alt2: #0c0806; 
+
+--color-main1: #ff6565;
+--color-main2: #ff9175;
+--color-main3: #ffb0a1;
+--color-main4: #fd9b89;
+--color-main5: #ffc5b6;
+}
+
+
+.raleway-<uniquifier> {
+  font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
+body {
+width: 100%;
+background-color: var(--backgroundcolor-main);
+color:white;
+font-family: 'Calibri';
+font-size: 14px;
+}
+	
+
+
+outer-box {
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+position: relative;
+}
+
+
+.box1 {
+	width: 60%;
+	margin: auto;
+	}
+
+.box2 {
+	margin: 100px 0 0 0;
+	}
+
+
+.header {
+	font-size: 50px;
+	font-family:'Raleway', sans-serif;
+	font-weight: 900;
+	letter-spacing: -3px;
+	margin: 50px 0 0 0;
+	cursor: default;
+	}
+
+.sub{
+	font-size: 16px;
+	font-family:'Raleway', sans-serif;
+	font-weight: normal;
+	color: white;
+	letter-spacing: normal;
+	margin: 10px 0 0 0;
+	}
+
+.album {
+	display: grid;
+	margin: 50px 0px 50px 0px;
+	grid-template-columns: 50% 50%;
+	}
+
+.album .desc {
+	font-size: 18px;
+	font-family:'Raleway', sans-serif;
+	font-weight: 300;
+	letter-spacing: normal;
+	margin: 0 0 0 30px;
+	}
+
+.album .desc .name {
+font-size: 40px;
+font-weight: 800;
+cursor: default;
+}
+
+.album .desc .artist {
+	font-size: 24px;
+	font-weight: 500;
+	margin: 0 0 20px 0;
+	}
+
+.album .desc .info {
+	margin: 0 0 5px 0;
+	font-weight: 500;
+	}
+
+.album .desc .buttons {
+	flex-wrap: wrap;
+	margin: 0 0 0 -2px;
+	cursor: default;
+	}
+
+.album .desc .buttons .button {
+margin: 0 -1px 0 0;
+background-color: var(--backgroundcolor-alt1);
+border-radius: 7px;
+text-align: center;
+padding: 2px 6px 2px 6px;
+font-size: 12px;
+transition: 0.1s ease-in-out;
+}
+
+.album .desc .buttons .button:hover {
+	background-color: var(--backgroundcolor-alt2);
+	color: var(--color-main3);
+	}
+
+.hover-letter {
+display: inline-block; /* Necessary for transform effects */
+transition: transform 0.1s ease-in-out, color 0.1s ease-in-out; /* Smooth transition for hover effects */
+}
