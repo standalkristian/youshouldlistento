@@ -1,23 +1,27 @@
-// Select all elements with the class 'name'
-const names = document.querySelectorAll(".name");
-
+window.onload = function() {
+// Define the getCSSVariable function
 function getCSSVariable(variable) {
     return getComputedStyle(document.documentElement).getPropertyValue(variable).trim();
 }
 
+const names = document.querySelectorAll(".name");
+
 names.forEach(name => {
     name.innerHTML = name.textContent
         .split("")
-        .map(function(letter) {
-            // Check if the letter is a space
+        .map(letter => {
             if (letter === " ") {
-                return "&nbsp;"; // Return a non-breaking space
+                return "&nbsp;"; // Non-breaking space for spaces
             }
-            return `<span class="hover-letter">${letter}</span>`; // Wrap letters in spans
+
+            // Generate a random static rotation angle between 0 and 10 degrees
+            const randomStaticAngle = Math.random() * 5 - 2.5;
+
+            // Apply the static rotation directly in the style attribute and store it in a data attribute
+            return `<span class="hover-letter" style="display: inline-block; transform: rotate(${randomStaticAngle}deg);" data-static-rotation="${randomStaticAngle}">${letter}</span>`;
         })
         .join("");
 
-    // Define your set of colors
     const colors = [
         getCSSVariable('--color-main1'),
         getCSSVariable('--color-main2'),
@@ -29,23 +33,24 @@ names.forEach(name => {
     const letters = name.querySelectorAll(".hover-letter");
 
     letters.forEach(letter => {
-        // Set the transform origin to the bottom
         letter.style.transformOrigin = "bottom";
 
         letter.addEventListener("mouseenter", function() {
-            // Generate a random scale between 1.05 and 1.15
-            const randomScale = 1.05 + Math.random() * 0.1; // Scale factor between 1.05 and 1.15
-            letter.style.transform = `scaleY(${randomScale})`; // Stretch upwards by random scale
-            
-            // Choose a random color from the predefined set
-            const randomColor = colors[Math.floor(Math.random() * colors.length)];
-            letter.style.color = randomColor; // Set random color
+            const randomScale = 1.05 + Math.random() * 0.1; 
+            const randomHoverRotation = Math.random() * 14 - 7; // Hover rotation between -10 and +10
 
-            // Reset the transformation after a delay (e.g., 100ms)
+            letter.style.transform = `rotate(${randomHoverRotation}deg) scaleY(${randomScale})`; // Hover transformation
+
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+            letter.style.color = randomColor;
+
+            // Get the static rotation from the data attribute and reset it after the hover effect
             setTimeout(() => {
-                letter.style.transform = "scaleY(1)"; // Reset to original
+                const staticAngle = letter.getAttribute('data-static-rotation'); // Get the stored static rotation
+                letter.style.transform = `rotate(${staticAngle}deg)`; // Reset to static rotation only
                 letter.style.color = ""; // Reset color
-            }, 110); // Adjust the time as necessary (100ms here)
+            }, 110);
         });
     });
 });
+};
