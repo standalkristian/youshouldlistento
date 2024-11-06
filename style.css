@@ -1,11 +1,8 @@
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
-
-
 :root {
 --backgroundcolor-main: #191412;
 --backgroundcolor-alt1: #120d0b;
 --backgroundcolor-alt2: #0c0806; 
+--backgroundcolor-alt3: #5e5d5c; 
 
 --color-main1: #ff6565;
 --color-main2: #ff9175;
@@ -15,18 +12,11 @@
 }
 
 
-.raleway-<uniquifier> {
-  font-family: "Raleway", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: <weight>;
-  font-style: normal;
-}
-
 body {
-width: 100%;
+width: 99%;
 background-color: var(--backgroundcolor-main);
 color:white;
-font-family: 'Calibri';
+font-family: 'Quicksand';
 font-size: 14px;
 }
 	
@@ -51,21 +41,27 @@ position: relative;
 
 
 .header {
-	font-size: 70px;
-	font-family: Danfo, sans-serif;
+	font-size: 65px;
+	font-family: 'Danfo', sans-serif;
 	xfont-weight: 900;
 	xletter-spacing: -3px;
 	margin: 50px 0 0 0;
 	cursor: default;
+	text-shadow: 3px 5px 1px var(--backgroundcolor-alt1);
 	}
 
 .sub{
-	font-size: 16px;
-	font-family:'Raleway', sans-serif;
-	font-weight: normal;
+	font-size: 18px;
+	padding: 8px 14px 8px 14px;
+	border-radius: 8px;
+	background-color: var(--backgroundcolor-alt1);
+	font-family:'Quicksand', sans-serif;
+	font-weight: bold;
 	color: white;
+	width: fit-content;
 	letter-spacing: normal;
 	margin: 10px 0 0 0;
+	text-shadow: none;
 	}
 
 .album {
@@ -106,7 +102,7 @@ cursor: default;
 	}
 
 .album .desc .buttons .button {
-margin: 0 -1px 0 0;
+margin: 2px -1px 0 0;
 background-color: var(--backgroundcolor-alt1);
 border-radius: 7px;
 text-align: center;
@@ -125,13 +121,22 @@ display: inline-block; /* Necessary for transform effects */
 transition: transform 0.1s ease-in-out, color 0.1s ease-in-out; /* Smooth transition for hover effects */
 }
 
+::selection {
+	background-color: var(--backgroundcolor-alt3); /* Choose your background color */
+	color: var(--color-main1); /* Choose your text color */
+}
 
 /*Edit for small screens*/
 @media only screen and (max-width: 1600px) {
 
+.box1 {
+	width: 90%;
+}
+
 .header {
-	font-size: 10px;
+	font-size: 35px;
 	margin: 25px 0 0 0;
+	word-wrap: break-word;
 	}
 
 .album .desc {
@@ -141,6 +146,9 @@ transition: transform 0.1s ease-in-out, color 0.1s ease-in-out; /* Smooth transi
 .album .desc .name {
 	font-size: 20px;
 	}
+
+.sub {
+	font-size: 12px;
+}
 	
 }
-</style>
