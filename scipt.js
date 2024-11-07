@@ -1,3 +1,4 @@
+window.onload = function() {
 // Define the getCSSVariable function
 function getCSSVariable(variable) {
     return getComputedStyle(document.documentElement).getPropertyValue(variable).trim();
@@ -52,4 +53,4 @@ names.forEach(name => {
         });
     });
 });
-
+};
