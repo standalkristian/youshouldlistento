@@ -1,4 +1,4 @@
-
+<style>
 :root {
 --backgroundcolor-main: #191412;
 --backgroundcolor-alt1: #120d0b;
@@ -12,7 +12,7 @@
 --color-main5: #ffc5b6;
 }
 
-<style>
+
 body {
 width: 99%;
 background-color: var(--backgroundcolor-main);
