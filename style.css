@@ -1,4 +1,3 @@
-<style>
 :root {
 --backgroundcolor-main: #191412;
 --backgroundcolor-alt1: #120d0b;
@@ -15,12 +14,14 @@
 
 body {
 width: 99%;
-background-color: #191412;
+background-color: var(--backgroundcolor-main);
 color:white;
 font-family: 'Quicksand';
 font-size: 14px;
 }
 	
+
+
 outer-box {
 background-position: center;
 background-repeat: no-repeat;
@@ -151,4 +152,3 @@ transition: transform 0.1s ease-in-out, color 0.1s ease-in-out; /* Smooth transi
 }
 	
 }
-</style>
