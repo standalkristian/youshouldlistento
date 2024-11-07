@@ -1,8 +1,8 @@
 :root {
 --backgroundcolor-main: #191412;
 --backgroundcolor-alt1: #120d0b;
---backgroundcolor-alt2: #0c0806; 
---backgroundcolor-alt3: #5e5d5c; 
+--backgroundcolor-alt2: #0c0806;
+--backgroundcolor-alt3: #5e5d5c;
 
 --color-main1: #ff6565;
 --color-main2: #ff9175;
@@ -41,17 +41,18 @@ position: relative;
 
 
 .header {
-	font-size: 65px;
+	font-size: 80px;
 	font-family: 'Danfo', sans-serif;
 	xfont-weight: 900;
 	xletter-spacing: -3px;
 	margin: 50px 0 0 0;
 	cursor: default;
 	text-shadow: 3px 5px 1px var(--backgroundcolor-alt1);
+	line-height: 70px;
 	}
 
 .sub{
-	font-size: 18px;
+	font-size: 16px;
 	padding: 8px 14px 8px 14px;
 	border-radius: 8px;
 	background-color: var(--backgroundcolor-alt1);
@@ -62,6 +63,8 @@ position: relative;
 	letter-spacing: normal;
 	margin: 10px 0 0 0;
 	text-shadow: none;
+	height: fit-content;
+	line-height: normal;
 	}
 
 .album {
@@ -70,22 +73,35 @@ position: relative;
 	grid-template-columns: 50% 50%;
 	}
 
+.album img {
+	box-shadow: -20px 20px 3px var(--backgroundcolor-alt1);
+	transition: 1s ease-in-out;
+	width: 550px;
+}
+
+.album img:hover {
+	box-shadow: -40px 40px 50px var(--backgroundcolor-alt1);
+	width: 600px;
+	position: relative;
+}
+
 .album .desc {
 	font-size: 18px;
 	font-family:'Raleway', sans-serif;
 	font-weight: 300;
 	letter-spacing: normal;
-	margin: 0 0 0 30px;
+	margin: 0 0 0 50px;
 	}
 
 .album .desc .name {
 font-size: 40px;
 font-weight: 800;
 cursor: default;
+margin: 0 0 5px 0;
 }
 
 .album .desc .artist {
-	font-size: 24px;
+	font-size: 18px;
 	font-weight: 500;
 	margin: 0 0 20px 0;
 	}
