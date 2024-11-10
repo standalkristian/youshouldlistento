@@ -54,3 +54,45 @@ names.forEach(name => {
     });
 });
 };
+function myFunCopy() {
+    // Get the text field
+    var copyText = document.getElementById("myCopy");
+  
+    // Select the text field
+    copyText.select();
+    copyText.setSelectionRange(0, 99999); // For mobile devices
+  
+    // Copy the text inside the text field
+    navigator.clipboard.writeText(copyText.value);
+    
+    // Alert the copied text
+   // alert("Copied the text: " + copyText.value);
+  }
+
+  const tags = document.querySelectorAll('.tag');
+  const items = document.querySelectorAll('.album');
+  
+  tags.forEach(tag => {
+    tag.addEventListener('click', () => {
+      const selectedTag = tag.getAttribute('data-tag');
+  
+      // Reset all items to be visible initially
+      items.forEach(item => {
+        item.style.display = 'flex'; // Show all items by default
+      });
+  
+      // Apply filter based on the selected tag
+      items.forEach(item => {
+        const itemTags = item.getAttribute('data-tag');
+        
+        if (itemTags) {
+          const itemTagsArray = itemTags.split(' ');
+          
+          // Check if the item contains the selected tag
+          if (!itemTagsArray.includes(selectedTag)) {
+            item.style.display = 'none'; // Hide items that don't match the selected tag
+          }
+        }
+      });
+    });
+  });
