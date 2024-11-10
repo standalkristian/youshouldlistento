@@ -1,6 +1,6 @@
 :root {
 --backgroundcolor-main: #191412;
---backgroundcolor-alt1: #120d0b;
+--backgroundcolor-alt1: #2b2b2b;
 --backgroundcolor-alt2: #0c0806;
 --backgroundcolor-alt3: #5e5d5c;
 
@@ -14,13 +14,12 @@
 
 body {
 width: 99%;
-background-color: var(--backgroundcolor-main);
+background-image: url("https://i.imgur.com/PLdpZmZ.jpeg");
+background-size: contain;
 color:white;
 font-family: 'Quicksand';
 font-size: 14px;
 }
-	
-
 
 outer-box {
 background-position: center;
@@ -41,80 +40,83 @@ position: relative;
 
 
 .header {
-	font-size: 80px;
-	font-family: 'Danfo', sans-serif;
-	xfont-weight: 900;
-	xletter-spacing: -3px;
+	font-size: 120px;
+	font-family: 'Barrio', sans-serif;
+	letter-spacing: -3px;
 	margin: 50px 0 0 0;
 	cursor: default;
-	text-shadow: 3px 5px 1px var(--backgroundcolor-alt1);
-	line-height: 70px;
+	line-height: 95px;
 	}
 
+.header a {
+	transition: 500ms ease-in-out;
+}
+
+.header a:hover {
+color: whitesmoke !important;
+}
+
 .sub{
-	font-size: 16px;
-	padding: 8px 14px 8px 14px;
-	border-radius: 8px;
-	background-color: var(--backgroundcolor-alt1);
+	font-size: 18px;
 	font-family:'Quicksand', sans-serif;
-	font-weight: bold;
+	font-weight: 500;
 	color: white;
 	width: fit-content;
 	letter-spacing: normal;
-	margin: 10px 0 0 0;
+	margin: 20px 0 0 0;
 	text-shadow: none;
 	height: fit-content;
 	line-height: normal;
 	}
 
 .album {
-	display: grid;
+	display: flex;
 	margin: 125px 0px 125px 0px;
 	grid-template-columns: 50% 50%;
 	}
 
 .album img {
-	box-shadow: -20px 20px 3px var(--backgroundcolor-alt1);
-	transition: 1s ease-in-out;
+	box-shadow: -20px 20px 10px rgb(0, 0, 0,0.5);
+	transition: 400ms ease-in-out;
 	width: 550px;
 }
 
 .album img:hover {
-	box-shadow: -40px 40px 50px var(--backgroundcolor-alt1);
-	width: 600px;
+	box-shadow: -40px 40px 30px rgb(0, 0, 0,0.3);
+	width: 570px;
 	position: relative;
 }
 
 .album .desc {
 	font-size: 18px;
-	font-family:'Raleway', sans-serif;
-	font-weight: 300;
+	font-family:'Quicksand', sans-serif;
+	font-weight: 500;
 	letter-spacing: normal;
 	margin: 0 0 0 50px;
 	}
 
 .album .desc .name {
-font-size: 40px;
-font-weight: 800;
+font-family: 'Annie Use Your Telescope', sans-serif;
+font-size: 50px;
+font-weight: 900;
 cursor: default;
-margin: 0 0 5px 0;
+margin: 0 0 0px 0;
 }
 
 .album .desc .artist {
-	font-size: 18px;
-	font-weight: 500;
-	margin: 0 0 20px 0;
+	margin: 0 0 40px 0;
+	font-weight: bolder;
 	}
 
 .album .desc .info {
-	margin: 0 0 5px 0;
-	font-weight: 500;
+	margin: 0 0 10px 0;
 	}
 
 .album .desc .buttons {
 	flex-wrap: wrap;
 	margin: 0 0 0 -2px;
 	cursor: default;
+	line-height: 24px;
 	}
 
 .album .desc .buttons .button {
@@ -141,6 +143,65 @@ transition: transform 0.1s ease-in-out, color 0.1s ease-in-out; /* Smooth transi
 	background-color: var(--backgroundcolor-alt3); /* Choose your background color */
 	color: var(--color-main1); /* Choose your text color */
 }
+
+.links {
+	display: grid;
+}
+
+.link {
+font-size: 12px;
+margin: 20px 0 0 0;
+}
+
+input {
+	width: 250px;
+	border-radius: 6px;
+	border: none;
+	padding: 4px 9px 4px 9px;
+	font-family: 'Quicksand', sans-serif;
+}
+
+button {
+	font-family: 'Quicksand', sans-serif;
+	background-color: white;
+	border: none;
+	padding: 4px 9px 4px 9px;
+	border-radius: 6px;
+	transition:background-color 0.1s ease-in-out, color 0.1s ease-in-out, box-shadow 0s 0.3s ease-in-out;
+	margin: 0 0 0 5px;
+}
+
+button:hover {
+	color: white;
+	background-color: var(--backgroundcolor-alt1);
+}
+
+button:active {
+color: var(--color-main1);
+box-shadow: 0 0 5px rgb(255, 255, 255, 0.5);
+transition: 0s;
+}
+
+.tag-container {
+	margin: 20px 0 0 0;
+}
+
+.tag {
+	font-family: 'Quicksand', sans-serif;
+	color: white;
+	margin: 6px -1px 0 0;
+	background-color: var(--backgroundcolor-alt1);
+	border-radius: 7px;
+	text-align: center;
+	padding: 2px 6px 2px 6px;
+	font-size: 12px;
+	transition: 0.1s ease-in-out;
+}
+
+.tag:hover {
+	background-color: var(--backgroundcolor-alt2);
+	color: var(--color-main3);
+	}
 
 /*Edit for small screens*/
 @media only screen and (max-width: 1600px) {
