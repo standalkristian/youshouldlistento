@@ -54,20 +54,24 @@ names.forEach(name => {
     });
 });
 };
-function myFunCopy() {
-    // Get the text field
-    var copyText = document.getElementById("myCopy");
-  
-    // Select the text field
-    copyText.select();
-    copyText.setSelectionRange(0, 99999); // For mobile devices
-  
-    // Copy the text inside the text field
-    navigator.clipboard.writeText(copyText.value);
-    
-    // Alert the copied text
-   // alert("Copied the text: " + copyText.value);
-  }
+function copyText(fieldId) {
+  // Get the specified text field
+  var copyText = document.getElementById(fieldId);
+
+  // Select the text field
+  copyText.select();
+  copyText.setSelectionRange(0, 99999); // For mobile devices
+
+  // Copy the text inside the text field
+  navigator.clipboard.writeText(copyText.value)
+      .then(() => {
+          // Optional: Alert the copied text
+         // alert("Copied the text: " + copyText.value);
+      })
+      .catch(err => {
+          console.error('Failed to copy text: ', err);
+      });
+}
 
   const tags = document.querySelectorAll('.tag');
   const items = document.querySelectorAll('.album');
